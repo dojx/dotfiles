@@ -28,4 +28,6 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
-alias dotfiles='/usr/bin/git --git-dir=/home/dojx/.dotfiles/ --work-tree=/home/dojx'
+
+# Git bare repo for dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
