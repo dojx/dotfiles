@@ -1,0 +1,10 @@
+{
+  "Ignore1": {
+    "include": [".c", ".h"],
+    "exclude": ["Gen/", "dir_test/"]
+  },
+  "Ignore2": {
+    "include": [".py", ".js"],
+    "exclude": ["Gen/"]
+  }
+}
