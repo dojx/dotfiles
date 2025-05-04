@@ -2,6 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR="nvim"
 
 ZSH_THEME="arrow"
 
@@ -13,6 +15,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Display Pokemon-colorscripts
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
@@ -31,3 +34,25 @@ alias lt='ls --tree'
 
 # Git bare repo for dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Source ROS Jazzy
+source /opt/ros/jazzy/setup.zsh
+
+# Zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
+# Yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# Aliases
+alias v='nvim'
+alias gz='QT_QPA_PLATFORM=xcb gz'
+
+
