@@ -14,6 +14,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+# Source ROS Jazzy
+source /opt/ros/jazzy/setup.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -25,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 # fastfetch. Will be disabled if above colorscript was chosen to install
 #fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
+# Aliases
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'
 alias l='ls -l'
@@ -32,11 +35,21 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# Git bare repo for dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias v='nvim'
+alias gz='QT_QPA_PLATFORM=xcb gz'
 
-# Source ROS Jazzy
-source /opt/ros/jazzy/setup.zsh
+# Git
+alias gst="git status --short"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gu="git pull"
+alias gl="git log"
+alias gb="git branch"
+alias gi="git init"
+alias gcl="git clone"
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
@@ -50,9 +63,3 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-
-# Aliases
-alias v='nvim'
-alias gz='QT_QPA_PLATFORM=xcb gz'
-
-
