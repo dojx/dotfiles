@@ -39,17 +39,19 @@ alias v='nvim'
 alias gz='QT_QPA_PLATFORM=xcb gz'
 
 # Git
-alias gst="git status --short"
-alias gd="git diff"
-alias ga="git add"
-alias gc="git commit"
-alias gp="git push"
-alias gu="git pull"
-alias gl="git log"
-alias gb="git branch"
-alias gi="git init"
-alias gcl="git clone"
+alias gst='git status --short'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gu='git pull'
+alias gl='git log'
+alias gb='git branch'
+alias gi='git init'
+alias gcl='git clone'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias lc='nvim leetcode.nvim'
 
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
