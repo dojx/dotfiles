@@ -15,7 +15,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 # Source ROS Jazzy
-source /opt/ros/jazzy/setup.zsh
+if [[ -f /opt/ros/jazzy/setup.zsh ]]; then
+  source /opt/ros/jazzy/setup.zsh
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
